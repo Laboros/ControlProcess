@@ -1,102 +1,148 @@
 package com.controlprocess.pojo;
 
+import java.sql.Timestamp;
+
+import com.controlprocess.constants.ControlProcessConstants;
+import com.controlprocess.constants.Status;
+
+
 public class ControlProcessDetail {
 	
-	private long controlProcessDetailId;
+	private long controlProcessDetailId;//RDBMS generated id
+	private ControlProcess controlProcess;//Foreign key
 	
-	private String metaFileNameWithInputLoc;
-	private String metaFileNameWithDestLoc;
+	private String controlFileName; //Control File Name
+	private String datFileName;//Data file name
+	private String metaFileName; //Meta File Name
 	
-	private String dataFileNameWithInputLoc;
-	private String dataFileNameWithDestLoc;
+	private String hdfsCtlFileLoc;
+	private String hdfsMetaFileLoc;
+	private String hdfsDatFileLoc;
 	
-	private String controlNameWithFileInputLoc;
-	private String controlNameWithFileDestLoc;
+	private Status status;
+	
+	private String schemaValidation=ControlProcessConstants.NA.getStringValue(); //N/A,FAILED,SUCCESS
+	private String rowCountValidation;//N/A,FAILED,SUCCESS
+	private String crcValidation;//N/A,FAILED,SUCCESS
+	
+	private boolean ctlRowCountExist=Boolean.FALSE;
+	private long ctlRowCount;
+	private long computedRowCount;
+	
+	private String detailLogFileLoc;
+	
+	private Timestamp insertedDate;
+	private Timestamp updatedDate;
 	
 	
-	@SuppressWarnings("rawtypes")
-	private Enum status;
-
-
+	
 	public long getControlProcessDetailId() {
 		return controlProcessDetailId;
 	}
-
-
 	public void setControlProcessDetailId(long controlProcessDetailId) {
 		this.controlProcessDetailId = controlProcessDetailId;
 	}
-
-
-	public String getMetaFileNameWithInputLoc() {
-		return metaFileNameWithInputLoc;
+	
+	public ControlProcess getControlProcess() {
+		return controlProcess;
 	}
-
-
-	public void setMetaFileNameWithInputLoc(String metaFileNameWithInputLoc) {
-		this.metaFileNameWithInputLoc = metaFileNameWithInputLoc;
+	public void setControlProcess(ControlProcess controlProcess) {
+		this.controlProcess = controlProcess;
 	}
-
-
-	public String getMetaFileNameWithDestLoc() {
-		return metaFileNameWithDestLoc;
+	public String getControlFileName() {
+		return controlFileName;
 	}
-
-
-	public void setMetaFileNameWithDestLoc(String metaFileNameWithDestLoc) {
-		this.metaFileNameWithDestLoc = metaFileNameWithDestLoc;
+	public void setControlFileName(String controlFileName) {
+		this.controlFileName = controlFileName;
 	}
-
-
-	public String getDataFileNameWithInputLoc() {
-		return dataFileNameWithInputLoc;
+	public String getDatFileName() {
+		return datFileName;
 	}
-
-
-	public void setDataFileNameWithInputLoc(String dataFileNameWithInputLoc) {
-		this.dataFileNameWithInputLoc = dataFileNameWithInputLoc;
+	public void setDatFileName(String datFileName) {
+		this.datFileName = datFileName;
 	}
-
-
-	public String getDataFileNameWithDestLoc() {
-		return dataFileNameWithDestLoc;
+	public String getMetaFileName() {
+		return metaFileName;
 	}
-
-
-	public void setDataFileNameWithDestLoc(String dataFileNameWithDestLoc) {
-		this.dataFileNameWithDestLoc = dataFileNameWithDestLoc;
+	public void setMetaFileName(String metaFileName) {
+		this.metaFileName = metaFileName;
 	}
-
-
-	public String getControlNameWithFileInputLoc() {
-		return controlNameWithFileInputLoc;
+	public String getHdfsCtlFileLoc() {
+		return hdfsCtlFileLoc;
 	}
-
-
-	public void setControlNameWithFileInputLoc(String controlNameWithFileInputLoc) {
-		this.controlNameWithFileInputLoc = controlNameWithFileInputLoc;
+	public void setHdfsCtlFileLoc(String hdfsCtlFileLoc) {
+		this.hdfsCtlFileLoc = hdfsCtlFileLoc;
 	}
-
-
-	public String getControlNameWithFileDestLoc() {
-		return controlNameWithFileDestLoc;
+	public String getHdfsMetaFileLoc() {
+		return hdfsMetaFileLoc;
 	}
-
-
-	public void setControlNameWithFileDestLoc(String controlNameWithFileDestLoc) {
-		this.controlNameWithFileDestLoc = controlNameWithFileDestLoc;
+	public void setHdfsMetaFileLoc(String hdfsMetaFileLoc) {
+		this.hdfsMetaFileLoc = hdfsMetaFileLoc;
 	}
-
-
-	@SuppressWarnings("rawtypes")
-	public Enum getStatus() {
+	public String getHdfsDatFileLoc() {
+		return hdfsDatFileLoc;
+	}
+	public void setHdfsDatFileLoc(String hdfsDatFileLoc) {
+		this.hdfsDatFileLoc = hdfsDatFileLoc;
+	}
+	public Status getStatus() {
 		return status;
 	}
-
-
-	@SuppressWarnings("rawtypes")
-	public void setStatus(Enum status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
+	public String getSchemaValidation() {
+		return schemaValidation;
+	}
+	public void setSchemaValidation(String schemaValidation) {
+		this.schemaValidation = schemaValidation;
+	}
+	public String getRowCountValidation() {
+		return rowCountValidation;
+	}
+	public void setRowCountValidation(String rowCountValidation) {
+		this.rowCountValidation = rowCountValidation;
+	}
+	public String getCrcValidation() {
+		return crcValidation;
+	}
+	public void setCrcValidation(String crcValidation) {
+		this.crcValidation = crcValidation;
+	}
+	public boolean isCtlRowCountExist() {
+		return ctlRowCountExist;
+	}
+	public void setCtlRowCountExist(boolean ctlRowCountExist) {
+		this.ctlRowCountExist = ctlRowCountExist;
+	}
+	public long getCtlRowCount() {
+		return ctlRowCount;
+	}
+	public void setCtlRowCount(long ctlRowCount) {
+		this.ctlRowCount = ctlRowCount;
+	}
+	public long getComputedRowCount() {
+		return computedRowCount;
+	}
+	public void setComputedRowCount(long computedRowCount) {
+		this.computedRowCount = computedRowCount;
+	}
+	public String getDetailLogFileLoc() {
+		return detailLogFileLoc;
+	}
+	public void setDetailLogFileLoc(String detailLogFileLoc) {
+		this.detailLogFileLoc = detailLogFileLoc;
+	}
+	public Timestamp getInsertedDate() {
+		return insertedDate;
+	}
+	public void setInsertedDate(Timestamp insertedDate) {
+		this.insertedDate = insertedDate;
+	}
+	public Timestamp getUpdatedDate() {
+		return updatedDate;
+	}
+	public void setUpdatedDate(Timestamp updatedDate) {
+		this.updatedDate = updatedDate;
+	}
 }
