@@ -7,6 +7,7 @@ public enum ControlProcessConstants {
 	READY("READY"),
 	PROCESSED("PROCESSED"),
 	COMPLETED("COMPLETED"),
+	PARTIAL("PARTIAL"),
 	FAILED("FAILED");
 	
 	private String value;

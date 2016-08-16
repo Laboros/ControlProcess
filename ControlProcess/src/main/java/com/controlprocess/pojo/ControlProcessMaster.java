@@ -1,29 +1,30 @@
 package com.controlprocess.pojo;
 
-public class ControlProcessPojo {
+import java.util.List;
+
+
+public class ControlProcessMaster {
 	
 	private long controlProcessId;
 	private String inboxLocation;
 	private String cronJobStartTime;
 	private String cronJobEndTime;
-	private boolean cronJobSuccess;
 	
-	private boolean isCronJobHDFSDest;
-	private boolean isMetaExist;
-	private boolean isDatExist;
-	private boolean isControlFileExist;
+	private String cronJobName;
 	
-	private String metaFileInputLoc;
-	private String metaFileDestLoc;
+	private boolean cronJobSuccess=Boolean.TRUE; //Cron job succes or failed
 	
-	private String dataFileInputLoc;
-	private String dataFileDestLoc;
+	private boolean isCronJobHDFSDest=Boolean.TRUE;
+	private boolean isMetaExist=Boolean.TRUE;
+	private boolean isDatExist=Boolean.TRUE;
+	private boolean isControlFileExist=Boolean.TRUE; //Some times the data file itself the control file
 	
-	private String controlFileInputLoc;
-	private String controlFileDestLoc;
+	//setters and getters	
 	
-	private Enum status;
-	//setters and getters
+	@SuppressWarnings("rawtypes")
+	private Enum status; //Complete status of the process.
+	
+	private List<ControlProcessDetail> details;
 
 	public long getControlProcessId() {
 		return controlProcessId;
@@ -55,6 +56,14 @@ public class ControlProcessPojo {
 
 	public void setCronJobEndTime(String cronJobEndTime) {
 		this.cronJobEndTime = cronJobEndTime;
+	}
+
+	public String getCronJobName() {
+		return cronJobName;
+	}
+
+	public void setCronJobName(String cronJobName) {
+		this.cronJobName = cronJobName;
 	}
 
 	public boolean isCronJobSuccess() {
@@ -97,66 +106,23 @@ public class ControlProcessPojo {
 		this.isControlFileExist = isControlFileExist;
 	}
 
-	public String getMetaFileInputLoc() {
-		return metaFileInputLoc;
-	}
-
-	public void setMetaFileInputLoc(String metaFileInputLoc) {
-		this.metaFileInputLoc = metaFileInputLoc;
-	}
-
-	public String getMetaFileDestLoc() {
-		return metaFileDestLoc;
-	}
-
-	public void setMetaFileDestLoc(String metaFileDestLoc) {
-		this.metaFileDestLoc = metaFileDestLoc;
-	}
-
-	public String getDataFileInputLoc() {
-		return dataFileInputLoc;
-	}
-
-	public void setDataFileInputLoc(String dataFileInputLoc) {
-		this.dataFileInputLoc = dataFileInputLoc;
-	}
-
-	public String getDataFileDestLoc() {
-		return dataFileDestLoc;
-	}
-
-	public void setDataFileDestLoc(String dataFileDestLoc) {
-		this.dataFileDestLoc = dataFileDestLoc;
-	}
-
-	public String getControlFileInputLoc() {
-		return controlFileInputLoc;
-	}
-
-	public void setControlFileInputLoc(String controlFileInputLoc) {
-		this.controlFileInputLoc = controlFileInputLoc;
-	}
-
-	public String getControlFileDestLoc() {
-		return controlFileDestLoc;
-	}
-
-	public void setControlFileDestLoc(String controlFileDestLoc) {
-		this.controlFileDestLoc = controlFileDestLoc;
-	}
-
+	@SuppressWarnings("rawtypes")
 	public Enum getStatus() {
 		return status;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void setStatus(Enum status) {
 		this.status = status;
 	}
-	
-	
-	
-	
-	
-	
 
+	public List<ControlProcessDetail> getDetails() {
+		return details;
+	}
+
+	public void setDetails(List<ControlProcessDetail> details) {
+		this.details = details;
+	}
+	
+ 	
 }
