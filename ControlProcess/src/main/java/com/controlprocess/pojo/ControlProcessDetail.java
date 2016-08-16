@@ -11,9 +11,14 @@ public class ControlProcessDetail {
 	private long controlProcessDetailId;//RDBMS generated id
 	private ControlProcess controlProcess;//Foreign key
 	
-	private String controlFileName; //Control File Name
-	private String datFileName;//Data file name
-	private String metaFileName; //Meta File Name
+	private String baseControlFileNameWithLoc; //Control File Name
+	private String baseDatFileNameWithLoc;//Data file name
+	private String baseMetaFileNameWithLoc; //Meta File Name
+	
+	private String destControlFileNameWithLoc; //Control File Name
+	private String destDatFileNameWithLoc;//Data file name
+	private String destMetaFileNameWithLoc; //Meta File Name
+	
 	
 	private String hdfsCtlFileLoc;
 	private String hdfsMetaFileLoc;
@@ -49,23 +54,43 @@ public class ControlProcessDetail {
 	public void setControlProcess(ControlProcess controlProcess) {
 		this.controlProcess = controlProcess;
 	}
-	public String getControlFileName() {
-		return controlFileName;
+	
+	
+	public String getBaseControlFileNameWithLoc() {
+		return baseControlFileNameWithLoc;
 	}
-	public void setControlFileName(String controlFileName) {
-		this.controlFileName = controlFileName;
+	public void setBaseControlFileNameWithLoc(String baseControlFileNameWithLoc) {
+		this.baseControlFileNameWithLoc = baseControlFileNameWithLoc;
 	}
-	public String getDatFileName() {
-		return datFileName;
+	public String getBaseDatFileNameWithLoc() {
+		return baseDatFileNameWithLoc;
 	}
-	public void setDatFileName(String datFileName) {
-		this.datFileName = datFileName;
+	public void setBaseDatFileNameWithLoc(String baseDatFileNameWithLoc) {
+		this.baseDatFileNameWithLoc = baseDatFileNameWithLoc;
 	}
-	public String getMetaFileName() {
-		return metaFileName;
+	public String getBaseMetaFileNameWithLoc() {
+		return baseMetaFileNameWithLoc;
 	}
-	public void setMetaFileName(String metaFileName) {
-		this.metaFileName = metaFileName;
+	public void setBaseMetaFileNameWithLoc(String baseMetaFileNameWithLoc) {
+		this.baseMetaFileNameWithLoc = baseMetaFileNameWithLoc;
+	}
+	public String getDestControlFileNameWithLoc() {
+		return destControlFileNameWithLoc;
+	}
+	public void setDestControlFileNameWithLoc(String destControlFileNameWithLoc) {
+		this.destControlFileNameWithLoc = destControlFileNameWithLoc;
+	}
+	public String getDestDatFileNameWithLoc() {
+		return destDatFileNameWithLoc;
+	}
+	public void setDestDatFileNameWithLoc(String destDatFileNameWithLoc) {
+		this.destDatFileNameWithLoc = destDatFileNameWithLoc;
+	}
+	public String getDestMetaFileNameWithLoc() {
+		return destMetaFileNameWithLoc;
+	}
+	public void setDestMetaFileNameWithLoc(String destMetaFileNameWithLoc) {
+		this.destMetaFileNameWithLoc = destMetaFileNameWithLoc;
 	}
 	public String getHdfsCtlFileLoc() {
 		return hdfsCtlFileLoc;
