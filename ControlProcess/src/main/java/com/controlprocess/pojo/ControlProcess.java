@@ -71,6 +71,14 @@ public class ControlProcess {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
+	public void addControlProcessDetail(final ControlProcessDetail controlProcessDetail)
+	{
+		if(this.detail==null)
+		{
+			this.detail=new HashSet<ControlProcessDetail>();
+		}
+		this.detail.add(controlProcessDetail);
+	}
 	
 }
