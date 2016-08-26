@@ -13,9 +13,9 @@ public class ControlProcess {
 	private String controlProcessId;//CRON ID or oozie id
 	private Timestamp startTime;
 	private Timestamp endTime;
-	private ProcessType processType;  //CRON or OOZIE or Other
-	private Status status;
-	private String userName;
+	private String processType=ProcessType.CRON.getStringValue();  //CRON or OOZIE or Other
+	private String status=Status.MOVED.getStringValue();
+	private String userName=System.getenv("user.name");
 	
 	
 
@@ -46,19 +46,19 @@ public class ControlProcess {
 	public void setEndTime(Timestamp endTime) {
 		this.endTime = endTime;
 	}
-	public ProcessType getProcessType() {
+	
+	public String getProcessType() {
 		return processType;
 	}
-	public void setProcessType(ProcessType processType) {
+	public void setProcessType(String processType) {
 		this.processType = processType;
 	}
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
-	
 	public Set<ControlProcessDetail> getDetail() {
 		return detail;
 	}
@@ -72,13 +72,13 @@ public class ControlProcess {
 		this.userName = userName;
 	}
 
-	public void addControlProcessDetail(final ControlProcessDetail controlProcessDetail)
-	{
-		if(this.detail==null)
-		{
-			this.detail=new HashSet<ControlProcessDetail>();
-		}
-		this.detail.add(controlProcessDetail);
-	}
-	
+//	public void addControlProcessDetail(final ControlProcessDetail controlProcessDetail)
+//	{
+//		if(this.detail==null)
+//		{
+//			this.detail=new HashSet<ControlProcessDetail>();
+//		}
+//		this.detail.add(controlProcessDetail);
+//	}
+//	
 }

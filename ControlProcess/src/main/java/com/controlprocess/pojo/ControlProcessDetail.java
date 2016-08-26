@@ -24,7 +24,7 @@ public class ControlProcessDetail {
 	private String hdfsMetaFileLoc;
 	private String hdfsDatFileLoc;
 	
-	private Status status;
+	private String status=Status.MOVED.getStringValue();
 	
 	private String schemaValidation=ControlProcessConstants.NA.getStringValue(); //N/A,FAILED,SUCCESS
 	private String rowCountValidation;//N/A,FAILED,SUCCESS
@@ -36,8 +36,8 @@ public class ControlProcessDetail {
 	
 	private String detailLogFileLoc;
 	
-	private Timestamp insertedDate;
-	private Timestamp updatedDate;
+	private Timestamp insertedDate=new Timestamp(System.currentTimeMillis());
+	private Timestamp updatedDate=new Timestamp(System.currentTimeMillis());
 	
 	
 	
@@ -110,10 +110,11 @@ public class ControlProcessDetail {
 	public void setHdfsDatFileLoc(String hdfsDatFileLoc) {
 		this.hdfsDatFileLoc = hdfsDatFileLoc;
 	}
-	public Status getStatus() {
+	
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public String getSchemaValidation() {
